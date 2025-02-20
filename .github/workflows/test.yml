@@ -1,13 +1,7 @@
-name: Simple Test Workflow
+name: Call Reusable Workflow
 
 on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 簡単なメッセージを表示
-        run: |
-          echo "Hello, GitHub Actions!"
-          echo ${{ secrets.TEST_ABC }}
-          echo ${{ secrets.TEST_TEST }}
+  call-workflow:
+    uses: testnoorganization/actions/.github/workflows/test.yml@main 
